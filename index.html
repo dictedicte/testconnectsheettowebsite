@@ -43,12 +43,20 @@
       box-sizing: border-box;
       border-bottom: 1px solid #eee;
       padding: 10px;
-      background: red;
+      background-color: red;
     }
     .card:hover{
-      background-color: white;
+        background-color: white;
     }
 
+    .card-content{
+        max-height: 80px;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+    }
+.card:hover .card-content {
+  max-height: 300px; /* large enough for full content */
+}
     .title {
       font-weight: bold;
     }
