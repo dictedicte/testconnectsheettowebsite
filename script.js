@@ -76,8 +76,13 @@ function createCard(item) {
   const div = document.createElement("div");
   div.className = "card";
   div.innerHTML = `
-    <h5 class="title">${item.title}</h5>
-    <p class="subtitle">${item.subtitle}</p>
+    <div class="card-content">
+      <div class="title">${item.title}</div>
+      <div class="subtitle">${item.subtitle}</div>
+      <div class="extra">
+        ${item.subtitle} — more details here if needed.
+      </div>
+    </div>
   `;
   return div;
 }
