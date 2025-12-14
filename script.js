@@ -34,7 +34,7 @@ async function loadData() {
   data = body.map(row => ({
     title: row[0] || "",
     subtitle: row[1] || "",
-    details: row[2] || "",
+    details: row[2]?.trim() || "",
     searchText: (row[0] + " " + row[1]).toLowerCase()
   }));
 
@@ -80,9 +80,7 @@ function createCard(item) {
     <div class="card-content">
       <div class="title">${item.title}</div>
       <div class="subtitle">${item.subtitle}</div>
-      <div class="extra">
-        ${item.details}
-      </div>
+      ${item.details ? `<div class="details">${item.details}</div>` : ""}
     </div>
   `;
   return div;
